@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A276B6CE1AB51A6F009EF649 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A276B6CD1AB51A6F009EF649 /* AppDelegate.m */; };
+		A276B6D01AB51A6F009EF649 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A276B6CF1AB51A6F009EF649 /* main.m */; };
+		A276B6D31AB51A6F009EF649 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A276B6D21AB51A6F009EF649 /* PushViewController.m */; };
+		A276B6D51AB51A6F009EF649 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A276B6D41AB51A6F009EF649 /* Images.xcassets */; };
+		A276B6D81AB51A6F009EF649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A276B6D61AB51A6F009EF649 /* Main.storyboard */; };
+		A276B6E41AB51A6F009EF649 /* SmartPushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A276B6E31AB51A6F009EF649 /* SmartPushTests.m */; };
+		A276B6F11AB51AF8009EF649 /* ioSock.c in Sources */ = {isa = PBXBuildFile; fileRef = A276B6EF1AB51AF8009EF649 /* ioSock.c */; };
+		A276B6F41AB51B01009EF649 /* TextFieldDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = A276B6F31AB51B01009EF649 /* TextFieldDrag.m */; };
+		A276B6FC1AB53781009EF649 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A276B6FB1AB53781009EF649 /* HelpViewController.m */; };
+		A276B6FF1AB53816009EF649 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276B6FE1AB53816009EF649 /* Cocoa.framework */; };
+		A276B7011AB5381B009EF649 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276B7001AB5381B009EF649 /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A276B6DE1AB51A6F009EF649 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A276B6BF1AB51A6F009EF649 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A276B6C61AB51A6F009EF649;
+			remoteInfo = SmartPush;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A276B6C71AB51A6F009EF649 /* SmartPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A276B6CB1AB51A6F009EF649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A276B6CC1AB51A6F009EF649 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A276B6CD1AB51A6F009EF649 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A276B6CF1AB51A6F009EF649 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A276B6D11AB51A6F009EF649 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
+		A276B6D21AB51A6F009EF649 /* PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
+		A276B6D41AB51A6F009EF649 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A276B6D71AB51A6F009EF649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A276B6DD1AB51A6F009EF649 /* SmartPushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartPushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A276B6E21AB51A6F009EF649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A276B6E31AB51A6F009EF649 /* SmartPushTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartPushTests.m; sourceTree = "<group>"; };
+		A276B6EF1AB51AF8009EF649 /* ioSock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioSock.c; sourceTree = "<group>"; };
+		A276B6F01AB51AF8009EF649 /* ioSock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioSock.h; sourceTree = "<group>"; };
+		A276B6F21AB51B01009EF649 /* TextFieldDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldDrag.h; sourceTree = "<group>"; };
+		A276B6F31AB51B01009EF649 /* TextFieldDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldDrag.m; sourceTree = "<group>"; };
+		A276B6FA1AB53781009EF649 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		A276B6FB1AB53781009EF649 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		A276B6FE1AB53816009EF649 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A276B7001AB5381B009EF649 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A276B6C41AB51A6F009EF649 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A276B7011AB5381B009EF649 /* WebKit.framework in Frameworks */,
+				A276B6FF1AB53816009EF649 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A276B6DA1AB51A6F009EF649 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A276B6BE1AB51A6F009EF649 = {
+			isa = PBXGroup;
+			children = (
+				A276B6C91AB51A6F009EF649 /* SmartPush */,
+				A276B6E01AB51A6F009EF649 /* SmartPushTests */,
+				A276B6FD1AB537F8009EF649 /* Frameworks */,
+				A276B6C81AB51A6F009EF649 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A276B6C81AB51A6F009EF649 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A276B6C71AB51A6F009EF649 /* SmartPush.app */,
+				A276B6DD1AB51A6F009EF649 /* SmartPushTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A276B6C91AB51A6F009EF649 /* SmartPush */ = {
+			isa = PBXGroup;
+			children = (
+				A276B6ED1AB51AEE009EF649 /* Common */,
+				A276B6EE1AB51AEE009EF649 /* Library */,
+				A276B6CC1AB51A6F009EF649 /* AppDelegate.h */,
+				A276B6CD1AB51A6F009EF649 /* AppDelegate.m */,
+				A276B6D11AB51A6F009EF649 /* PushViewController.h */,
+				A276B6D21AB51A6F009EF649 /* PushViewController.m */,
+				A276B6FA1AB53781009EF649 /* HelpViewController.h */,
+				A276B6FB1AB53781009EF649 /* HelpViewController.m */,
+				A276B6D41AB51A6F009EF649 /* Images.xcassets */,
+				A276B6D61AB51A6F009EF649 /* Main.storyboard */,
+				A276B6CA1AB51A6F009EF649 /* Supporting Files */,
+			);
+			path = SmartPush;
+			sourceTree = "<group>";
+		};
+		A276B6CA1AB51A6F009EF649 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A276B6CB1AB51A6F009EF649 /* Info.plist */,
+				A276B6CF1AB51A6F009EF649 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A276B6E01AB51A6F009EF649 /* SmartPushTests */ = {
+			isa = PBXGroup;
+			children = (
+				A276B6E31AB51A6F009EF649 /* SmartPushTests.m */,
+				A276B6E11AB51A6F009EF649 /* Supporting Files */,
+			);
+			path = SmartPushTests;
+			sourceTree = "<group>";
+		};
+		A276B6E11AB51A6F009EF649 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A276B6E21AB51A6F009EF649 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A276B6ED1AB51AEE009EF649 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A276B6F21AB51B01009EF649 /* TextFieldDrag.h */,
+				A276B6F31AB51B01009EF649 /* TextFieldDrag.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A276B6EE1AB51AEE009EF649 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				A276B6EF1AB51AF8009EF649 /* ioSock.c */,
+				A276B6F01AB51AF8009EF649 /* ioSock.h */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		A276B6FD1AB537F8009EF649 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A276B7001AB5381B009EF649 /* WebKit.framework */,
+				A276B6FE1AB53816009EF649 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A276B6C61AB51A6F009EF649 /* SmartPush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A276B6E71AB51A6F009EF649 /* Build configuration list for PBXNativeTarget "SmartPush" */;
+			buildPhases = (
+				A276B6C31AB51A6F009EF649 /* Sources */,
+				A276B6C41AB51A6F009EF649 /* Frameworks */,
+				A276B6C51AB51A6F009EF649 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartPush;
+			productName = SmartPush;
+			productReference = A276B6C71AB51A6F009EF649 /* SmartPush.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A276B6DC1AB51A6F009EF649 /* SmartPushTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A276B6EA1AB51A6F009EF649 /* Build configuration list for PBXNativeTarget "SmartPushTests" */;
+			buildPhases = (
+				A276B6D91AB51A6F009EF649 /* Sources */,
+				A276B6DA1AB51A6F009EF649 /* Frameworks */,
+				A276B6DB1AB51A6F009EF649 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A276B6DF1AB51A6F009EF649 /* PBXTargetDependency */,
+			);
+			name = SmartPushTests;
+			productName = SmartPushTests;
+			productReference = A276B6DD1AB51A6F009EF649 /* SmartPushTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A276B6BF1AB51A6F009EF649 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = www.skyfox.org;
+				TargetAttributes = {
+					A276B6C61AB51A6F009EF649 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					A276B6DC1AB51A6F009EF649 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = A276B6C61AB51A6F009EF649;
+					};
+				};
+			};
+			buildConfigurationList = A276B6C21AB51A6F009EF649 /* Build configuration list for PBXProject "SmartPush" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A276B6BE1AB51A6F009EF649;
+			productRefGroup = A276B6C81AB51A6F009EF649 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A276B6C61AB51A6F009EF649 /* SmartPush */,
+				A276B6DC1AB51A6F009EF649 /* SmartPushTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A276B6C51AB51A6F009EF649 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A276B6D51AB51A6F009EF649 /* Images.xcassets in Resources */,
+				A276B6D81AB51A6F009EF649 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A276B6DB1AB51A6F009EF649 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A276B6C31AB51A6F009EF649 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A276B6D31AB51A6F009EF649 /* PushViewController.m in Sources */,
+				A276B6FC1AB53781009EF649 /* HelpViewController.m in Sources */,
+				A276B6F11AB51AF8009EF649 /* ioSock.c in Sources */,
+				A276B6D01AB51A6F009EF649 /* main.m in Sources */,
+				A276B6F41AB51B01009EF649 /* TextFieldDrag.m in Sources */,
+				A276B6CE1AB51A6F009EF649 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A276B6D91AB51A6F009EF649 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A276B6E41AB51A6F009EF649 /* SmartPushTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A276B6DF1AB51A6F009EF649 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A276B6C61AB51A6F009EF649 /* SmartPush */;
+			targetProxy = A276B6DE1AB51A6F009EF649 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A276B6D61AB51A6F009EF649 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A276B6D71AB51A6F009EF649 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A276B6E51AB51A6F009EF649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A276B6E61AB51A6F009EF649 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A276B6E81AB51A6F009EF649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SmartPush/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A276B6E91AB51A6F009EF649 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SmartPush/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A276B6EB1AB51A6F009EF649 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmartPushTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartPush.app/Contents/MacOS/SmartPush";
+			};
+			name = Debug;
+		};
+		A276B6EC1AB51A6F009EF649 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmartPushTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartPush.app/Contents/MacOS/SmartPush";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A276B6C21AB51A6F009EF649 /* Build configuration list for PBXProject "SmartPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A276B6E51AB51A6F009EF649 /* Debug */,
+				A276B6E61AB51A6F009EF649 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A276B6E71AB51A6F009EF649 /* Build configuration list for PBXNativeTarget "SmartPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A276B6E81AB51A6F009EF649 /* Debug */,
+				A276B6E91AB51A6F009EF649 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A276B6EA1AB51A6F009EF649 /* Build configuration list for PBXNativeTarget "SmartPushTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A276B6EB1AB51A6F009EF649 /* Debug */,
+				A276B6EC1AB51A6F009EF649 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A276B6BF1AB51A6F009EF649 /* Project object */;
+}
