@@ -21,5 +21,14 @@
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag
+{
+    if (!flag)
+    {
+        [[theApplication windows][0] makeKeyAndOrderFront:self];
+    }
+    return YES;
+}
+
 
 @end
