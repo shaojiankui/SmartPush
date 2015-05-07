@@ -300,9 +300,9 @@
     OSStatus result = SSLWrite(context, &message, (pointer - message), &processed);
     NSLog(@"SSLWrite(): %d %zd", result, processed);
     if (result == noErr){
-        NSLog(@"发送成功");
+        [self showMessage:@"发送成功"];
     }else{
-        NSLog(@"发送失败");
+        [self showMessage:@"发送失败"];
     }
     
     
