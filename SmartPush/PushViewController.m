@@ -304,8 +304,6 @@
     }else{
         [self showMessage:@"发送失败"];
     }
-    
-    
 }
 //环境切换
 - (IBAction)modeSwitch:(id)sender {
