@@ -9,40 +9,38 @@
 #import <Cocoa/Cocoa.h>
 #import "ioSock.h"
 #import "TextFieldDrag.h"
+#import "DragPopUpButton.h"
 @interface PushViewController : NSViewController<NSTextFieldDelegate>
 {
     
-    NSString *_cerPath;
     NSString *_token;
     
     otSocket socket;
     OSStatus _connectResult;
     OSStatus _closeResult;
     
-    SSLContextRef context;
-    SecKeychainRef keychain;
-    SecCertificateRef certificate;
-    SecIdentityRef identity;
+    SSLContextRef _context;
+    SecKeychainRef _keychain;
+    SecCertificateRef _certificate;
+    SecIdentityRef _identity;
     
     NSUserDefaults *_defaults;
+    
+    NSMutableArray *_certificates;
 
 }
 @property (weak) IBOutlet NSTextField *payload;
-
+@property (unsafe_unretained) IBOutlet NSTextView *logTextView;
 @property (weak) IBOutlet NSMatrix *mode;
 @property (weak) IBOutlet NSButtonCell *devSelect;
 @property (weak) IBOutlet NSButtonCell *productSelect;
-
-@property (weak) IBOutlet TextFieldDrag *devCer;
-@property (weak) IBOutlet TextFieldDrag *productCer;
-
-@property (weak) IBOutlet NSTextField *devToken;
-@property (weak) IBOutlet NSTextField *productToken;
+@property (weak) IBOutlet NSPopUpButton *payLoadPopUpButton;
+@property (weak) IBOutlet NSTextField *tokenTextField;
+@property (weak) IBOutlet DragPopUpButton *cerPopUpButton;
 
 - (IBAction)connect:(id)sender;
 - (IBAction)push:(id)sender;
 - (IBAction)modeSwitch:(id)sender;
+- (IBAction)payLoadButtonTouched:(id)sender;
 
-- (IBAction)devCerBrowse:(id)sender;
-- (IBAction)productCerBrowse:(id)sender;
 @end

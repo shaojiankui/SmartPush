@@ -16,6 +16,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+//    NSWindow *w =  [[NSApplication sharedApplication] windows][0];
+//    [w center];
+//    [w orderFrontRegardless];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
