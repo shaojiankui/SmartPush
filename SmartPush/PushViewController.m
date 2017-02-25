@@ -10,9 +10,9 @@
 #define Push_Production  "gateway.push.apple.com"
 
 
-#define KEY_CER   @"KEY_CER"
-#define KEY_TOKEN @"KEY_TOKEN"
-#define KEY_Payload         @"KEY_Payload"
+#define KEY_CER         @"KEY_CER"
+#define KEY_TOKEN       @"KEY_TOKEN"
+#define KEY_Payload     @"KEY_Payload"
 
 #import "PushViewController.h"
 #import "SecManager.h"
@@ -25,9 +25,10 @@
     
     _connectResult = -50;
     _closeResult = -50;
-    [self loadUserData];
     [self modeSwitch:self.devSelect];
     [self loadKeychain];
+    [self loadUserData];
+
 }
 
 - (IBAction)devPopButtonSelect:(DragPopUpButton*)sender {
@@ -46,6 +47,7 @@
 - (void)applyWithCerPath:(NSString*)cerPath{
     SecCertificateRef secRef =  [SecManager certificatesWithPath:cerPath];
     if ([SecManager isPushCertificate:secRef]) {
+        _cerPath = cerPath;
         if (secRef) {
             _certificate = secRef;
             [self resetConnect];
@@ -99,9 +101,14 @@
 
     if ([[_defaults valueForKey:KEY_Payload] description].length>0)
         [self.payload setStringValue:[_defaults valueForKey:KEY_Payload]];
+    
+    if ([[_defaults valueForKey:KEY_CER] description].length>0)
+        [self applyWithCerPath:[_defaults valueForKey:KEY_CER]];
+
 
 }
 - (void)saveUserData{
+    [_defaults setValue:_cerPath forKey:KEY_CER];
     [_defaults setValue:self.tokenTextField.stringValue forKey:KEY_TOKEN];
     [_defaults setValue:self.payload.stringValue forKey:KEY_Payload];
     [_defaults synchronize];

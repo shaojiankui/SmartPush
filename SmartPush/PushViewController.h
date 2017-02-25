@@ -14,7 +14,8 @@
 {
     
     NSString *_token;
-    
+    NSString *_cerPath;
+
     otSocket socket;
     OSStatus _connectResult;
     OSStatus _closeResult;
@@ -23,9 +24,7 @@
     SecKeychainRef _keychain;
     SecCertificateRef _certificate;
     SecIdentityRef _identity;
-    
     NSUserDefaults *_defaults;
-    
     NSMutableArray *_certificates;
 
 }
