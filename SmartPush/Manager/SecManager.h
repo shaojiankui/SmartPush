@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Sec.h"
 @interface SecManager : NSObject
 + (NSArray *)allPushCertificatesWithEnvironment:(BOOL)isDevelop;
 + (SecCertificateRef)certificatesWithPath:(NSString*)path;
@@ -15,4 +15,5 @@
 + (NSString *)subjectSummaryWithCertificate:(SecCertificateRef)certificate;
 + (NSDate *)expirationWithCertificate:(SecCertificateRef)certificate;
 + (NSArray *)allKeychainCertificatesWithError:(NSError *__autoreleasing *)error;
++ (Sec*)secModelWithRef:(SecCertificateRef)sec;
 @end

@@ -17,6 +17,7 @@
 		A276B6FC1AB53781009EF649 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A276B6FB1AB53781009EF649 /* HelpViewController.m */; };
 		A276B6FF1AB53816009EF649 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276B6FE1AB53816009EF649 /* Cocoa.framework */; };
 		A276B7011AB5381B009EF649 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A276B7001AB5381B009EF649 /* WebKit.framework */; };
+		B89258D91E63C831005E9F27 /* Sec.m in Sources */ = {isa = PBXBuildFile; fileRef = B89258D81E63C831005E9F27 /* Sec.m */; };
 		B8F2D8FF1E5D1D320029D63C /* SecManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D8FE1E5D1D320029D63C /* SecManager.m */; };
 		B8F2D9021E5D2B600029D63C /* DragPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D9011E5D2B600029D63C /* DragPopUpButton.m */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,8 @@
 		A276B6FB1AB53781009EF649 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		A276B6FE1AB53816009EF649 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A276B7001AB5381B009EF649 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B89258D71E63C831005E9F27 /* Sec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sec.h; sourceTree = "<group>"; };
+		B89258D81E63C831005E9F27 /* Sec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sec.m; sourceTree = "<group>"; };
 		B8F2D8FD1E5D1D320029D63C /* SecManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecManager.h; sourceTree = "<group>"; };
 		B8F2D8FE1E5D1D320029D63C /* SecManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecManager.m; sourceTree = "<group>"; };
 		B8F2D9001E5D2B600029D63C /* DragPopUpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragPopUpButton.h; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		A276B6C91AB51A6F009EF649 /* SmartPush */ = {
 			isa = PBXGroup;
 			children = (
+				B89258D61E63C821005E9F27 /* Model */,
 				B8F2D8FC1E5D1CF90029D63C /* Manager */,
 				A276B6ED1AB51AEE009EF649 /* View */,
 				A276B6EE1AB51AEE009EF649 /* Library */,
@@ -131,6 +135,15 @@
 				A276B6FE1AB53816009EF649 /* Cocoa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B89258D61E63C821005E9F27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B89258D71E63C831005E9F27 /* Sec.h */,
+				B89258D81E63C831005E9F27 /* Sec.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B8F2D8FC1E5D1CF90029D63C /* Manager */ = {
@@ -211,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B89258D91E63C831005E9F27 /* Sec.m in Sources */,
 				A276B6D31AB51A6F009EF649 /* PushViewController.m in Sources */,
 				A276B6FC1AB53781009EF649 /* HelpViewController.m in Sources */,
 				B8F2D9021E5D2B600029D63C /* DragPopUpButton.m in Sources */,

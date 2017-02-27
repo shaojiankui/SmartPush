@@ -10,11 +10,13 @@
 #import "ioSock.h"
 #import "TextFieldDrag.h"
 #import "DragPopUpButton.h"
+#import "Sec.h"
 @interface PushViewController : NSViewController<NSTextFieldDelegate>
 {
     
     NSString *_token;
-    NSString *_cerPath;
+    NSString *_lastCerPath;
+    NSString *_cerName;
 
     otSocket socket;
     OSStatus _connectResult;
@@ -22,11 +24,10 @@
     
     SSLContextRef _context;
     SecKeychainRef _keychain;
-    SecCertificateRef _certificate;
+    Sec *_currentSec;
     SecIdentityRef _identity;
     NSUserDefaults *_defaults;
     NSMutableArray *_certificates;
-
 }
 @property (weak) IBOutlet NSTextField *payload;
 @property (unsafe_unretained) IBOutlet NSTextView *logTextView;

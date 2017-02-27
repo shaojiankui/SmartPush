@@ -7,20 +7,53 @@
 //
 
 #import "SecManager.h"
-
+#import "Sec.h"
 @implementation SecManager
-+ (NSArray *)allPushCertificatesWithEnvironment:(BOOL)isDevelop{
++ (NSArray<Sec*> *)allPushCertificatesWithEnvironment:(BOOL)isDevelop{
     NSError *error;
     NSArray *allCertificates = [self allKeychainCertificatesWithError:&error];
     NSMutableArray *pushs = [NSMutableArray array];
     
     for (int i =0; i<[allCertificates count]; i++) {
-        SecCertificateRef sec = (__bridge SecCertificateRef)([allCertificates objectAtIndex:i]);
-        if ([self isPushCertificate:sec]) {
-            [pushs addObject:(__bridge id _Nonnull)(sec)];
+        id obj = [allCertificates objectAtIndex:i];
+        
+        if(obj != NULL){
+//           CFBridgingRetain
+            Sec *secModel = [self secModelWithRef:(__bridge_retained void *)(obj)];
+            if ([self isPushCertificateWithName:secModel.name]) {
+                [pushs addObject:secModel];
+            }
         }
     }
     return pushs;
+}
++ (Sec*)secModelWithRef:(SecCertificateRef)sec{
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    Sec *secModel = [[Sec alloc]init];
+    secModel.certificateRef = sec;
+
+    secModel.name = [self subjectSummaryWithCertificate:sec];
+    secModel.key = secModel.name;
+    secModel.date  = [SecManager expirationWithCertificate:sec];
+    secModel.expire = [NSString stringWithFormat:@"  [%@]", secModel.date ? [formatter stringFromDate: secModel.date] : @"expired"];
+
+    return secModel;
+}
++ (BOOL)isPushCertificateWithName:(NSString*)name{
+    
+    if ([name rangeOfString:@"Apple Development IOS Push Services:"].location != NSNotFound ||
+        [name rangeOfString:@"Apple Production IOS Push Services:"].location != NSNotFound||
+        [name rangeOfString:@"Apple Development Mac Push Services:"].location != NSNotFound||
+        [name rangeOfString:@"Apple Production Mac Push Services:"].location != NSNotFound||
+        [name rangeOfString:@"Apple Push Services:"].location != NSNotFound||
+        [name rangeOfString:@"Website Push ID:"].location != NSNotFound||
+        [name rangeOfString:@"VoIP Services:"].location != NSNotFound||
+        [name rangeOfString:@"WatchKit Services:"].location != NSNotFound ) {
+        return YES;
+    }
+    return NO;
 }
 + (BOOL)isPushCertificate:(SecCertificateRef)sec{
     NSString *name = [self subjectSummaryWithCertificate:sec];
