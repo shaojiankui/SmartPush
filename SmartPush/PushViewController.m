@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
 //
 
-#define Push_Developer  "gateway.sandbox.push.apple.com"
-#define Push_Production  "gateway.push.apple.com"
+#define Push_Developer  "api.sandbox.push.apple.com"
+#define Push_Production  "api.push.apple.com"
 
 
 #define KEY_CERNAME     @"KEY_CERNAME"
@@ -198,14 +198,20 @@
     PeerSpec peer;
     
     //测试开发环境
+    
+//    const char *hostName,
+//    int port,
+//    int nonBlocking,        // 0 or 1
+//    otSocket *socketNo,     // RETURNED
+//    PeerSpec *peer);
     if (self.devSelect == self.mode.selectedCell) {
-        _connectResult = MakeServerConnection(Push_Developer, 2195, &socket, &peer);
+        _connectResult = MakeServerConnection(Push_Developer, 2197, 0, &socket, &peer);
         // NSLog(@"MakeServerConnection(): %d", result);
     }
     
     //生产正式环境
     if (self.productSelect == self.mode.selectedCell) {
-        _connectResult = MakeServerConnection(Push_Production, 2195, &socket, &peer);
+        _connectResult = MakeServerConnection(Push_Production, 2197, 0, &socket, &peer);
         // NSLog(@"MakeServerConnection(): %d", result);
     }
     switch (_connectResult) {
