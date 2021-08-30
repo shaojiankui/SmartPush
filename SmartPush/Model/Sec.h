@@ -15,5 +15,6 @@
 
 @property (nonatomic,strong) NSDate *date;
 @property (nonatomic,copy)   NSString *expire;
+@property (nonatomic,assign)  BOOL fromFile;
 
 @end

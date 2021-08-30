@@ -37,10 +37,14 @@
 @property (weak) IBOutlet NSPopUpButton *payLoadPopUpButton;
 @property (weak) IBOutlet NSTextField *tokenTextField;
 @property (weak) IBOutlet DragPopUpButton *cerPopUpButton;
+@property (weak) IBOutlet NSSegmentedControl *prioritySegmentedControl;
+@property (weak) IBOutlet NSPopUpButton *payloadTypeButton;
 
 - (IBAction)connect:(id)sender;
 - (IBAction)push:(id)sender;
 - (IBAction)modeSwitch:(id)sender;
 - (IBAction)payLoadButtonTouched:(id)sender;
+- (IBAction)playLoadTypeTouched:(id)sender;
+- (IBAction)prioritySwitch:(id)sender;
 
 @end
