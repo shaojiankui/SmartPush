@@ -11,14 +11,10 @@
 
 
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^NetworkManagerSuccessBlock)(id responeObject);
-typedef void(^NetworkManagerFailBlock)(NSError *error);
 
 @interface NetworkManager : NSObject<NSURLSessionDelegate>
 @property (nonatomic, strong, nullable) __attribute__((NSObject)) SecIdentityRef identity;
 @property (nonatomic, strong) NSURLSession *session;
-@property (nonatomic, copy) NetworkManagerSuccessBlock  successBlock;
-@property (nonatomic, copy) NetworkManagerFailBlock  failBlock;
 
 + (NetworkManager*)sharedManager;
 //https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns?language=objc
@@ -27,10 +23,10 @@ typedef void(^NetworkManagerFailBlock)(NSError *error);
           withTopic:(nullable NSString *)topic
            priority:(NSUInteger)priority
          collapseID:(NSString *)collapseID
-        payloadType:(NSUInteger)payloadType
+        payloadType:(NSString *)payloadType
           inSandbox:(BOOL)sandbox
              exeSuccess:(void(^)(id responseObject))exeSuccess
-              exeFailed:(void(^)(NSError *error))exeFailed;
+              exeFailed:(void(^)(NSString *error))exeFailed;
 -(void)disconnect;
 @end
 

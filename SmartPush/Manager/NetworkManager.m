@@ -5,8 +5,7 @@
 //  Created by shao on 2021/8/24.
 //  Copyright © 2021 www.skyfox.org. All rights reserved.
 //
-#define Push_Developer  "api.sandbox.push.apple.com"
-#define Push_Production  "api.push.apple.com"
+
 #import "NetworkManager.h"
 static dispatch_once_t _onceToken;
 static NetworkManager *_sharedManager = nil;
@@ -60,12 +59,13 @@ static NetworkManager *_sharedManager = nil;
           withTopic:(nullable NSString *)topic
            priority:(NSUInteger)priority
          collapseID:(NSString *)collapseID
-        payloadType:(NSUInteger)payloadType
+        payloadType:(NSString *)payloadType
           inSandbox:(BOOL)sandbox
          exeSuccess:(void(^)(id responseObject))exeSuccess
-          exeFailed:(void(^)(NSError *error))exeFailed {
+          exeFailed:(void(^)(NSString *error))exeFailed {
 
-  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api%@.push.apple.com/3/device/%@", sandbox?@".sandbox":@"", token]]];
+  NSString *url = [NSString stringWithFormat:@"https://api%@.push.apple.com/3/device/%@", sandbox?@".sandbox":@"", token];
+  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
   request.HTTPMethod = @"POST";
   
   request.HTTPBody = [payload dataUsingEncoding:NSUTF8StringEncoding];
@@ -80,33 +80,28 @@ static NetworkManager *_sharedManager = nil;
 
   [request addValue:[NSString stringWithFormat:@"%lu", (unsigned long)priority] forHTTPHeaderField:@"apns-priority"];
 
-  [request addValue:@"0" forHTTPHeaderField:@"apns-push-type"];
+  [request addValue:payloadType forHTTPHeaderField:@"apns-push-type"];
   
   NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-    NSHTTPURLResponse *r = (NSHTTPURLResponse *)response;
-
-    if (r == nil && error) {
-        if (self.failBlock) {
-            self.failBlock(error);
+        NSHTTPURLResponse *r = (NSHTTPURLResponse *)response;
+        if (r == nil ||  error) {
+            if (exeFailed) {
+                exeFailed(error.debugDescription);
+            }
+        }else{
+            NSError *perror;
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&perror];
+            if (r.statusCode == 200 && !error) {
+                 if (exeSuccess) {
+                     exeSuccess(dict);
+                 }
+            }else{
+                NSString *reason = dict[@"reason"];
+                NSLog(@"reason:%@",reason);
+                exeFailed(reason);
+            }
         }
-        return;
-    }
-      
-    if (r.statusCode != 200 && data) {
-      NSError *error;
-      NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-      
-      if (error) {return;}
-      
-      NSString *reason = dict[@"reason"];
-      
-      // Not implemented?
-//      NSString *ID = r.allHeaderFields[@"apns-id"];
-        if (self.successBlock) {
-            self.successBlock(dict);
-        }
-        
-    }
+     
   }];
   [task resume];
 }
@@ -115,13 +110,13 @@ static NetworkManager *_sharedManager = nil;
 
 - (void)URLSession:(NSURLSession *)session task:(nonnull NSURLSessionTask *)task didReceiveChallenge:(nonnull NSURLAuthenticationChallenge *)challenge completionHandler:(nonnull void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
   SecCertificateRef certificate;
-  
+
   SecIdentityCopyCertificate(self.identity, &certificate);
-  
+
   NSURLCredential *cred = [[NSURLCredential alloc] initWithIdentity:self.identity
                                                        certificates:@[(__bridge_transfer id)certificate]
                                                         persistence:NSURLCredentialPersistenceForSession];
-  
+
   completionHandler(NSURLSessionAuthChallengeUseCredential, cred);
 }
 
