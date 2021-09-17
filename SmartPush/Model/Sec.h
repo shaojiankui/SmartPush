@@ -12,9 +12,9 @@
 @property (nonatomic) SecCertificateRef certificateRef;
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSString *key;
+@property (nonatomic,copy) NSString *topicName;
 
 @property (nonatomic,strong) NSDate *date;
 @property (nonatomic,copy)   NSString *expire;
 @property (nonatomic,assign)  BOOL fromFile;
-
 @end

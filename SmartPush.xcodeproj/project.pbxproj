@@ -342,7 +342,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.skyfox.SmartPush2;
+				PRODUCT_BUNDLE_IDENTIFIER = org.skyfox.SmartPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -356,7 +356,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.skyfox.SmartPush2;
+				PRODUCT_BUNDLE_IDENTIFIER = org.skyfox.SmartPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

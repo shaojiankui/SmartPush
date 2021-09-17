@@ -249,15 +249,15 @@
         [self log:@"未选择推送证书" warning:YES];
         return;
     }
-    [self log:@"发生推送信息" warning:NO];
+    [self log:@"发送推送信息" warning:NO];
     
     
     NSString *token = [self.tokenTextField.stringValue stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    
+
     [[NetworkManager sharedManager] postWithPayload:self.payload.stringValue
                                             toToken:token
-                                          withTopic:@""
+                                          withTopic:_currentSec?_currentSec.topicName:@""
                                            priority:self.prioritySegmentedControl.selectedTag
                                          collapseID:@""
                                         payloadType:self.payloadTypeButton.selectedItem.title
