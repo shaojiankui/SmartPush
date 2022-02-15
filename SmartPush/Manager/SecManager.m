@@ -51,6 +51,7 @@
         [name rangeOfString:@"Apple Development Mac Push Services:"].location != NSNotFound||
         [name rangeOfString:@"Apple Production Mac Push Services:"].location != NSNotFound||
         [name rangeOfString:@"Apple Push Services:"].location != NSNotFound||
+        [name rangeOfString:@"Apple Sandbox Push Services:"].location != NSNotFound||
         [name rangeOfString:@"Website Push ID:"].location != NSNotFound||
         [name rangeOfString:@"VoIP Services:"].location != NSNotFound||
         [name rangeOfString:@"WatchKit Services:"].location != NSNotFound ) {
@@ -66,6 +67,7 @@
         [name rangeOfString:@"Apple Development Mac Push Services:"].location != NSNotFound||
         [name rangeOfString:@"Apple Production Mac Push Services:"].location != NSNotFound||
         [name rangeOfString:@"Apple Push Services:"].location != NSNotFound||
+        [name rangeOfString:@"Apple Sandbox Push Services:"].location != NSNotFound||
         [name rangeOfString:@"Website Push ID:"].location != NSNotFound||
         [name rangeOfString:@"VoIP Services:"].location != NSNotFound||
         [name rangeOfString:@"WatchKit Services:"].location != NSNotFound ) {
