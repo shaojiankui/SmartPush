@@ -23,7 +23,6 @@
 //           CFBridgingRetain
             Sec *secModel = [self secModelWithRef:(__bridge_retained void *)(obj)];
             if ([self isPushCertificateWithName:secModel.name]) {
-                secModel.topicName =  [self topicNameWithCertificate:(__bridge_retained void *)(obj)];
                 [pushs addObject:secModel];
             }
         }
@@ -41,6 +40,7 @@
     secModel.key = secModel.name;
     secModel.date  = [SecManager expirationWithCertificate:sec];
     secModel.expire = [NSString stringWithFormat:@"  [%@]", secModel.date ? [formatter stringFromDate: secModel.date] : @"expired"];
+    secModel.topicName =  [self topicNameWithCertificate:sec];
 
     return secModel;
 }
@@ -54,7 +54,8 @@
         [name rangeOfString:@"Apple Sandbox Push Services:"].location != NSNotFound||
         [name rangeOfString:@"Website Push ID:"].location != NSNotFound||
         [name rangeOfString:@"VoIP Services:"].location != NSNotFound||
-        [name rangeOfString:@"WatchKit Services:"].location != NSNotFound ) {
+        [name rangeOfString:@"WatchKit Services:"].location != NSNotFound||
+        [name rangeOfString:@"Apple Sandbox Push Services:"].location != NSNotFound ) {
         return YES;
     }
     return NO;
@@ -70,7 +71,8 @@
         [name rangeOfString:@"Apple Sandbox Push Services:"].location != NSNotFound||
         [name rangeOfString:@"Website Push ID:"].location != NSNotFound||
         [name rangeOfString:@"VoIP Services:"].location != NSNotFound||
-        [name rangeOfString:@"WatchKit Services:"].location != NSNotFound ) {
+        [name rangeOfString:@"WatchKit Services:"].location != NSNotFound ||
+        [name rangeOfString:@"Apple Sandbox Push Services:"].location != NSNotFound) {
         return YES;
     }
     return NO;
