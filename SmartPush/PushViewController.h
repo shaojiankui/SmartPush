@@ -29,7 +29,7 @@
     NSUserDefaults *_defaults;
     NSMutableArray *_certificates;
 }
-@property (weak) IBOutlet NSTextField *payload;
+@property (unsafe_unretained) IBOutlet NSTextView *payload;
 @property (unsafe_unretained) IBOutlet NSTextView *logTextView;
 @property (weak) IBOutlet NSMatrix *mode;
 @property (weak) IBOutlet NSButtonCell *devSelect;

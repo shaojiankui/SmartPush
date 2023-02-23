@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21225"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="21225"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,7 +40,7 @@
                             <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25M-Xu-z2L">
                                 <rect key="frame" x="0.0" y="0.0" width="800" height="561"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO">
                                     <nil key="identifier"/>
                                 </webPreferences>
                             </webView>
@@ -429,15 +429,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="627" height="400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcA-Xi-C0a">
-                                <rect key="frame" x="81" y="148" width="529" height="126"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="charWrapping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="{&quot;aps&quot;:{&quot;alert&quot;:&quot;This is some fancy message.&quot;,&quot;badge&quot;:1,&quot;sound&quot;: &quot;default&quot;}}" drawsBackground="YES" id="LbH-lP-1rz">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ucb-HI-4dQ">
                                 <rect key="frame" x="16" y="87" width="63" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -544,18 +535,18 @@
                                 </connections>
                             </popUpButton>
                             <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6R-bG-i12">
-                                <rect key="frame" x="81" y="60" width="529" height="72"/>
+                                <rect key="frame" x="81" y="60" width="526" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" drawsBackground="NO" id="ljU-R8-adw">
-                                    <rect key="frame" x="1" y="1" width="512" height="70"/>
+                                    <rect key="frame" x="1" y="1" width="509" height="78"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Q67-zz-NpE">
-                                            <rect key="frame" x="0.0" y="0.0" width="512" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="509" height="78"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="512" height="70"/>
+                                            <size key="minSize" width="509" height="78"/>
                                             <size key="maxSize" width="529" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -566,7 +557,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="rre-P5-FxJ">
-                                    <rect key="frame" x="513" y="1" width="15" height="70"/>
+                                    <rect key="frame" x="510" y="1" width="15" height="78"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -662,6 +653,43 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21x-Ca-GU8">
+                                <rect key="frame" x="81" y="174" width="526" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" drawsBackground="NO" id="W5j-ps-Fih">
+                                    <rect key="frame" x="1" y="1" width="509" height="98"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView wantsLayer="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Ldc-Jc-ERe">
+                                            <rect key="frame" x="0.0" y="0.0" width="509" height="98"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="509" height="98"/>
+                                            <size key="maxSize" width="511" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="{&quot;aps&quot;:{&quot;alert&quot;:&quot;This is some fancy message.&quot;,&quot;badge&quot;:1,&quot;sound&quot;: &quot;default&quot;}}">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="12" name="Helvetica"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="ahi-pz-Esw">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="9ye-AG-ijE">
+                                    <rect key="frame" x="510" y="1" width="15" height="98"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                     </view>
                     <connections>
@@ -670,7 +698,7 @@
                         <outlet property="logTextView" destination="Q67-zz-NpE" id="wnC-1a-eSL"/>
                         <outlet property="mode" destination="Q7Y-Zt-sBK" id="kDt-qb-B0v"/>
                         <outlet property="payLoadPopUpButton" destination="dls-te-jYD" id="Wyi-Wv-eqg"/>
-                        <outlet property="payload" destination="pcA-Xi-C0a" id="8Jk-yj-51V"/>
+                        <outlet property="payload" destination="Ldc-Jc-ERe" id="LLb-GH-dY9"/>
                         <outlet property="payloadTypeButton" destination="Mpo-Dg-hFC" id="zT3-bB-JLX"/>
                         <outlet property="prioritySegmentedControl" destination="ODZ-l4-zvD" id="7sY-Bm-U9x"/>
                         <outlet property="productSelect" destination="CFZ-7h-bfx" id="KvQ-M2-uya"/>
@@ -679,7 +707,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42.5" y="1206"/>
+            <point key="canvasLocation" x="-154" y="1224"/>
         </scene>
     </scenes>
 </document>

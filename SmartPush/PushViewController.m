@@ -24,7 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.payload.stringValue = @"{\"aps\":{\"alert\":\"This is some fancy message.\",\"badge\":6,\"sound\": \"default\"}}";
+    self.payload.string = @"{\"aps\":{\"alert\":\"This is some fancy message.\",\"badge\":6,\"sound\": \"default\"}}";
+     
     //    [[ NSUserDefaults  standardUserDefaults] removeObjectForKey:KEY_CERNAME];
     //    [[ NSUserDefaults  standardUserDefaults] removeObjectForKey:KEY_CER];
     
@@ -131,7 +132,7 @@
         [self.tokenTextField setStringValue:[_defaults valueForKey:KEY_TOKEN]];
     
     if ([[_defaults valueForKey:KEY_Payload] description].length>0)
-        [self.payload setStringValue:[_defaults valueForKey:KEY_Payload]];
+        self.payload.string = [_defaults valueForKey:KEY_Payload];
     
     if ([[_defaults valueForKey:KEY_CERNAME] description].length>0)
         _cerName = [_defaults valueForKey:KEY_CERNAME];
@@ -142,7 +143,8 @@
 - (void)saveUserData{
     [_defaults setValue:_lastCerPath forKey:KEY_CER];
     [_defaults setValue:self.tokenTextField.stringValue forKey:KEY_TOKEN];
-    [_defaults setValue:self.payload.stringValue forKey:KEY_Payload];
+    [_defaults setValue:self.payload.string forKey:KEY_Payload];
+    
     [_defaults setValue:_cerName forKey:KEY_CERNAME];
     [_defaults synchronize];
 }
@@ -255,7 +257,7 @@
     NSString *token = [self.tokenTextField.stringValue stringByReplacingOccurrencesOfString:@" " withString:@""];
     
 
-    [[NetworkManager sharedManager] postWithPayload:self.payload.stringValue
+    [[NetworkManager sharedManager] postWithPayload:self.payload.string
                                             toToken:token
                                           withTopic:_currentSec?_currentSec.topicName:@""
                                            priority:self.prioritySegmentedControl.selectedTag
@@ -294,21 +296,25 @@
 }
 
 - (IBAction)payLoadButtonTouched:(NSPopUpButton*)sender {
+    NSString *stringValue = @"";
     switch (sender.indexOfSelectedItem) {
         case 1:
-            self.payload.stringValue = @"{\"aps\":{\"alert\":\"This is some fancy message.\"}}";
+            stringValue = @"{\"aps\":{\"alert\":\"This is some fancy message.\"}}";
             break;
         case 2:
-            self.payload.stringValue = @"{\"aps\":{\"alert\":\"This is some fancy message.\",\"badge\":6}}";
+            stringValue = @"{\"aps\":{\"alert\":\"This is some fancy message.\",\"badge\":6}}";
             break;
         case 3:
-            self.payload.stringValue = @"{\"aps\":{\"alert\":\"This is some fancy message.\",\"badge\":6,\"sound\": \"default\"}}";
+            stringValue = @"{\"aps\":{\"alert\":\"This is some fancy message.\",\"badge\":6,\"sound\": \"default\"}}";
             break;
         default:
-            self.payload.stringValue = @"{\"aps\":{\"alert\":\"This is some fancy message.\",\"badge\":6,\"sound\": \"default\"}}";
+            stringValue = @"{\"aps\":{\"alert\":\"This is some fancy message.\",\"badge\":6,\"sound\": \"default\"}}";
             break;
+
     }
-    
+                
+    self.payload.string  = stringValue;
+
 }
 
 - (void)browseDone:(void (^)(NSString *url))complete{
@@ -352,7 +358,7 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (message.length>0) {
-            NSDictionary *attributes = @{NSForegroundColorAttributeName:warning?[NSColor redColor]:[NSColor blackColor] , NSFontAttributeName: [NSFont systemFontOfSize:12]};
+            NSDictionary *attributes = @{NSForegroundColorAttributeName:warning?[NSColor redColor]:([self isDarkMode]?[NSColor whiteColor]:[NSColor blackColor]) , NSFontAttributeName: [NSFont systemFontOfSize:12]};
             NSAttributedString *string = [[NSAttributedString alloc] initWithString:message attributes:attributes];
             [self.logTextView.textStorage appendAttributedString:string];
             [self.logTextView.textStorage.mutableString appendString:@"\n"];
@@ -376,5 +382,13 @@
     
     // Update the view, if already loaded.
 }
-
+ 
+- (BOOL)isDarkMode {
+    if (@available(macOS 10.14, *)) {
+        NSDictionary *dict = [[NSUserDefaults standardUserDefaults] persistentDomainForName:NSGlobalDomain];
+        BOOL isDarkMode = [[dict objectForKey:@"AppleInterfaceStyle"] isEqualToString:@"Dark"];
+        return isDarkMode;
+    }
+    return NO;
+}
 @end
