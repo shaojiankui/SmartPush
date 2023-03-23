@@ -24,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.payload.automaticQuoteSubstitutionEnabled = NO;
     self.payload.string = @"{\"aps\":{\"alert\":\"This is some fancy message.\",\"badge\":6,\"sound\": \"default\"}}";
      
     //    [[ NSUserDefaults  standardUserDefaults] removeObjectForKey:KEY_CERNAME];
