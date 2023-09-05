@@ -49,10 +49,10 @@
             [self applyWithCerPath:url];
         }];
     }else{
-        [self log:[NSString stringWithFormat:@"选择证书 %@",_cerName] warning:NO];
         [self resetConnect];
         _currentSec =   [_certificates objectAtIndex:sender.indexOfSelectedItem-2];
         _cerName = _currentSec.name;
+        [self log:[NSString stringWithFormat:@"选择证书 %@", _cerName] warning:NO];
         [self connect:nil];
         
     }
