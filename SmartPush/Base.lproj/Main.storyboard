@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21225"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="21225"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="21701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -380,7 +380,8 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help(使用教程)" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Help(使用教程)" keyEquivalent="s" id="FKE-Sm-Kum">
+                                        <menuItem title="Help(使用教程)" id="FKE-Sm-Kum">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <segue destination="nZ3-C6-PK7" kind="show" id="KqK-Ca-qge"/>
                                             </connections>
@@ -419,7 +420,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="43" y="612"/>
+            <point key="canvasLocation" x="42.5" y="612"/>
         </scene>
         <!--Push View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -666,7 +667,7 @@
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <size key="minSize" width="509" height="98"/>
-                                            <size key="maxSize" width="511" height="10000000"/>
+                                            <size key="maxSize" width="526" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="{&quot;aps&quot;:{&quot;alert&quot;:&quot;This is some fancy message.&quot;,&quot;badge&quot;:1,&quot;sound&quot;: &quot;default&quot;}}">
                                                     <attributes>
