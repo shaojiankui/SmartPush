@@ -96,7 +96,7 @@
     int selectIndex= -1;
     for (int i=0;i<[_certificates count];i++) {
         Sec *sec =  [_certificates objectAtIndex:i];
-        [self.cerPopUpButton addItemWithTitle:[NSString stringWithFormat:@"%@ %@ %@", sec.name, sec.expire,[sec.key isEqualToString:@"lastSelected"]?@"文件":@""]];
+        [self.cerPopUpButton addItemWithTitle:[NSString stringWithFormat:@"%d. %@ %@ %@", i+1,sec.name, sec.expire,[sec.key isEqualToString:@"lastSelected"]?@"文件":@""]];
         //        [suffix appendString:@" "];
         if([_cerName length]>0 && [sec.name isEqualToString:_cerName])
         {
