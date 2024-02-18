@@ -220,7 +220,8 @@
     }
     
     // Create identity.
-    _connectResult = SecIdentityCreateWithCertificate(_keychain, _currentSec.certificateRef, &_identity);
+    SecCertificateRef certificateRef = _currentSec.certificateRef;
+    _connectResult = SecIdentityCreateWithCertificate(NULL, certificateRef, &_identity);
     // NSLog(@"SecIdentityCreateWithCertificate(): %d", result);
     if(_connectResult != errSecSuccess ){
         [self log:[NSString stringWithFormat:@"SSL端点域名不能被设置 %d",_connectResult] warning:YES];
